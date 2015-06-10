@@ -1,0 +1,9 @@
+<%= form_tag("sections", method: :post) do %>
+ <% @sections.each do |obj| %>
+  <% unless current_user.sections.include?(obj) %>
+  <%= obj.id %>
+  <%= link_to obj.name , {:controller => "sections" , :action => "student",  :obj => obj.attributes} %><br /> 
+  <% end %>
+
+ <% end %> 
+ <% end %>

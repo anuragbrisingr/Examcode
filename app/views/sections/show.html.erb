@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @section.name %>
+</p>
+ <% @section.questions.each do |question| %>
+  <p>
+  <strong>Question:</strong>
+  <%= question.content %>
+    <% question.answers.each do |answer| %>
+     <p>
+      <ul><li>
+      <%= answer.content %>
+      </li></ul> 
+     </p>
+    <% end %> 
+  <% end %>
+  </p>
+ 
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

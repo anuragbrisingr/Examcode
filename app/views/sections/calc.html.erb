@@ -1,0 +1,22 @@
+<h1>Your Marks: </h1>
+<%if @calcs.nil? %>
+   0
+<%else%>
+   <%= session[:total_marks] = session[:total_marks].to_i + @calcs.to_i %><br />
+   <%= link_to 'Exam Categories', 'categ' %>
+<% end %>
+
+
+<script type = "text/javascript" >
+      history.pushState(null,null);
+      window.addEventListener('popstate', function() {
+          history.pushState(null,null); });
+</script>
+
+<script type="text/javascript">
+
+  window.history.forward();
+
+</script>
+
+

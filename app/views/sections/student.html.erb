@@ -1,0 +1,22 @@
+<%= form_tag("/sections/calc?section_id=#{@section.id}", method: :post) do %>
+ 
+ <%i=1%>
+ <% @section.questions.each do |question| %>
+  <p>  
+  <strong>Question: <%= i %></strong>
+  <%= question.content %>
+   <p> 
+  <strong>Answers</strong><br/>
+
+ <%question.answers.each do |answer|%>
+   <%= radio_button_tag "section[#{question.id}][answer_id]", "#{answer.id}" %>
+  <%=answer.content%><br/>
+
+  <%end%>
+  </p>
+  <% i += 1 %>  
+  <% @section.number = @section.id %>
+  <% end %>
+  </p> <%= submit_tag "submit" %>
+ 
+<% end %>

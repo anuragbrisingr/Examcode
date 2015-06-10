@@ -1,0 +1,13 @@
+<% @section.questions.each do |question| %>
+  <p>
+  <strong>Question:</strong>
+  <%= question.content %>
+    <% question.answers.each do |answer| %>
+     <p>
+      <ul><li>
+      <%= answer.content %>
+      </li></ul> 
+     </p>
+    <% end %> 
+  <% end %>
+  </p>

@@ -1,0 +1,15 @@
+<h1>New Pupil</h1>
+ <% @pupil.questions.each do |question| %>
+  <p>
+  <strong>Question:</strong>
+  <%= question.content %>
+    <% question.answers.each do |answer| %>
+     <p>
+      <ul><li>
+      <%= answer.content %>
+      </li></ul> 
+     </p>
+    <% end %> 
+  <% end %>
+  </p>
+<%= link_to 'Back', pupils_path %>

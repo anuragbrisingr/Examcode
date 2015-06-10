@@ -1,0 +1,4 @@
+<h1>Welcome to the examination</h1>
+ <%= link_to 'Enter', controller: 'sections' %>
+ <%= link_to 'Student check', 'sections/categ' %>
+ 
